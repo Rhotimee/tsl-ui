@@ -1,4 +1,4 @@
-import type { languages } from 'monaco-editor';
+import type { languages, editor } from 'monaco-editor';
 
 export const tslLanguageConfig: languages.LanguageConfiguration = {
   comments: {
@@ -83,7 +83,7 @@ export const tslMonarchLanguage: languages.IMonarchLanguage = {
   },
 };
 
-export const tslTheme: languages.IStandaloneThemeData = {
+export const tslTheme: editor.IStandaloneThemeData = {
   base: 'vs-dark',
   inherit: true,
   rules: [

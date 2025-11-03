@@ -200,7 +200,7 @@ export default function Home() {
             </a>
             <span className="text-gray-600">•</span>
             <a
-              href="https://github.com/yourusername/tsl-ui"
+              href="https://github.com/rhotimee/tsl-ui"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 underline hover:text-blue-300"
