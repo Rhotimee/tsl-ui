@@ -13,12 +13,12 @@ services:
       repo: rhotimee/tsl-ui
 
     # Build configuration
-    build_command: ""  
+    build_command: ''
 
     # Runtime configuration
     http_port: 3000
     instance_count: 1
-    instance_size_slug: basic-xxs  
+    instance_size_slug: basic-xxs
 
     # Routes
     routes:
@@ -35,8 +35,8 @@ services:
     # Environment variables
     envs:
       - key: NODE_ENV
-        value: "production"
+        value: 'production'
       - key: PORT
-        value: "3000"
+        value: '3000'
       - key: HOSTNAME
-        value: "0.0.0.0"
+        value: '0.0.0.0'
