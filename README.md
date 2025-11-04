@@ -65,7 +65,7 @@ npm run build
 npm start
 ```
 
-## Docker 
+## Docker
 
 **Build the Docker image:**
 
