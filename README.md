@@ -45,7 +45,8 @@ A web application for the [TSL (Test Specification Language) Compiler](https://g
    npm install
    ```
 
-3. The TSLCompiler binary for macOS is already included in the `bin/` directory
+3. The TSLCompiler binary (macOS universal) is included in the `bin/` directory for local development
+   - For Docker deployment, the Linux x86_64 binary is automatically downloaded during build
 
 ### Running the Application
 
@@ -64,41 +65,23 @@ npm run build
 npm start
 ```
 
-## Project Structure
+## Docker 
 
-```
-tsl-ui/
-├── app/
-│   ├── api/
-│   │   └── compile/
-│   │       └── route.ts          # API endpoint for TSLCompiler execution
-│   ├── globals.css               # Global styles with Tailwind
-│   ├── layout.tsx                # Root layout
-│   └── page.tsx                  # Main application page
-├── components/
-│   ├── TSLEditor.tsx             # Monaco editor component with TSL support
-│   ├── OutputPanel.tsx           # Test case output display
-│   └── ToolBar.tsx               # Compilation controls and file operations
-├── lib/
-│   ├── tsl-language.ts           # TSL language definition for Monaco
-│   └── examples.ts               # Example TSL files library
-├── bin/
-│   └── tslcompiler               # TSLCompiler binary (macOS)
-└── public/                       # Static assets
+**Build the Docker image:**
+
+```bash
+docker build -t tsl-ui .
 ```
 
-## How It Works
+**Run the container:**
 
-1. **Frontend**: Built with Next.js 15, React 18, and Tailwind CSS
-2. **Editor**: Monaco Editor (VS Code's editor) with custom TSL language support
-3. **Compilation**: Next.js API route executes TSLCompiler as a child process
-4. **Flow**:
-   - User writes TSL in the editor
-   - Clicks "Compile" button
-   - Frontend sends TSL content to `/api/compile`
-   - Backend writes content to temporary file
-   - TSLCompiler processes the file
-   - Results are returned and displayed
+```bash
+docker run -d -p 3000:3000 --name tsl-ui tsl-ui
+```
+
+**Access the application:**
+
+Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Contributing
 
@@ -121,7 +104,7 @@ This project is open source. Please refer to the TSLCompiler project for compile
 
 ## Version
 
-Current TSLCompiler Version: **v1.0.6**
+Current TSLCompiler Version: **v1.0.7**
 
 ---
 
