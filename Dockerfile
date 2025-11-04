@@ -32,6 +32,9 @@ RUN pnpm install --frozen-lockfile
 # Copy source code
 COPY . .
 
+# Ensure public directory exists (even if empty)
+RUN mkdir -p /app/public
+
 # Build Next.js application (creates .next/standalone)
 RUN pnpm build
 
